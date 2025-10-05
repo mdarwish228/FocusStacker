@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "focusstacker"
+version = "0.1.0"
+description = "Advanced focus stacking using Laplacian pyramid merging"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Mohammad Darwish"},
+]
+keywords = ["focus-stacking", "image-processing", "computer-vision", "photography"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.24.4",
+    "opencv-contrib-python>=4.12.0.88",
+    "psutil>=7.1.0",
+    "pydantic>=2.11.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/focus-stacking"
+Repository = "https://github.com/yourusername/focus-stacking"
+Issues = "https://github.com/yourusername/focus-stacking/issues"
+Documentation = "https://github.com/yourusername/focus-stacking/wiki"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/focusstacker"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1",
+    "ty>=0.0.1a21",
+    "pytest>=8.4.2"
+]
