@@ -46,7 +46,7 @@ image_paths = [
 # Stack the images
 stack_images(
     image_paths=image_paths,
-    destimation_image_path="output/stacked_image.jpg"
+    destination_image_path="output/stacked_image.jpg"
 )
 ```
 
@@ -63,7 +63,7 @@ stack_images(
         "images/focus_3.jpg",
         "images/focus_4.jpg"
     ],
-    destimation_image_path="output/high_quality_stack.jpg",
+    destination_image_path="output/high_quality_stack.jpg",
     aligner=AlignerChoice.SIFT,
     blender=BlenderChoice.LAPLACIAN_PYRAMID_BALANCED,
     levels=6  # More pyramid levels for higher quality
@@ -79,7 +79,7 @@ The main function for focus stacking.
 #### Parameters
 
 - **`image_paths`** (`list[str | Path]`): List of input image paths (2-50 images)
-- **`destimation_image_path`** (`str | Path`): Output path for the stacked image
+- **`destination_image_path`** (`str | Path`): Output path for the stacked image
 - **`aligner`** (`AlignerChoice`, optional): Alignment algorithm (default: `SIFT`)
 - **`blender`** (`BlenderChoice`, optional): Blending algorithm (default: `LAPLACIAN_PYRAMID_BALANCED`)
 - **`levels`** (`int`, optional): Number of pyramid levels 3-8 (default: 5)
@@ -132,7 +132,7 @@ from focusstacker.common.exceptions import (
 try:
     stack_images(
         image_paths=["img1.jpg", "img2.jpg"],
-        destimation_image_path="result.jpg"
+        destination_image_path="result.jpg"
     )
 except FocusStackerValidationException as e:
     print(f"Validation error: {e}")
