@@ -21,14 +21,14 @@ logger = logging.getLogger(__name__)
 
 def stack_images(
     image_paths: list[Union[str, Path]],
-    destimation_image_path: Union[str, Path],
+    destination_image_path: Union[str, Path],
     *,
     aligner: AlignerChoice = AlignerChoice.SIFT,
     blender: BlenderChoice = BlenderChoice.LAPLACIAN_PYRAMID_BALANCED,
     levels: int = 5,
 ) -> None:
     logger.info(f"Starting focus stacking with {len(image_paths)} images")
-    logger.info(f"Destination: {destimation_image_path}")
+    logger.info(f"Destination: {destination_image_path}")
     logger.info(f"Aligner: {aligner}")
     logger.info(f"Blender: {blender}")
     logger.info(f"Levels: {levels}")
@@ -37,7 +37,7 @@ def stack_images(
     # The validation model now handles its own exception conversion
     validated_input = FocusStackerInputValidation(
         image_paths=image_paths,
-        destination_image_path=destimation_image_path,
+        destination_image_path=destination_image_path,
         aligner=aligner,
         blender=blender,
         levels=levels,

@@ -30,7 +30,7 @@ class TestStackImagesValidation:
         # Execute the function with real data
         stack_images(
             image_paths=[str(p) for p in aligned_image_paths],
-            destimation_image_path=str(output_path),
+            destination_image_path=str(output_path),
             aligner=default_aligner,
             blender=default_blender,
             levels=default_levels,
@@ -59,7 +59,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerAlignmentException):
             stack_images(
                 image_paths=[str(p) for p in misaligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -82,7 +82,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(p) for p in invalid_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -100,7 +100,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(directory_path)],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -118,7 +118,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(single_image)],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -136,7 +136,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(p) for p in aligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=2,
@@ -146,7 +146,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(p) for p in aligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=9,
@@ -167,7 +167,7 @@ class TestStackImagesValidation:
         with pytest.raises(FocusStackerValidationException):
             stack_images(
                 image_paths=[str(p) for p in aligned_image_paths],
-                destimation_image_path=str(existing_output),
+                destination_image_path=str(existing_output),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -202,7 +202,7 @@ class TestStackImagesAlignment:
         # Execute
         stack_images(
             image_paths=[str(p) for p in aligned_image_paths],
-            destimation_image_path=str(output_path),
+            destination_image_path=str(output_path),
             aligner=default_aligner,
             blender=default_blender,
             levels=default_levels,
@@ -237,7 +237,7 @@ class TestStackImagesAlignment:
         with pytest.raises(FocusStackerAlignmentException, match="Alignment failed"):
             stack_images(
                 image_paths=[str(p) for p in misaligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -272,7 +272,7 @@ class TestStackImagesBlending:
         # Execute
         stack_images(
             image_paths=[str(p) for p in aligned_image_paths],
-            destimation_image_path=str(output_path),
+            destination_image_path=str(output_path),
             aligner=default_aligner,
             blender=default_blender,
             levels=default_levels,
@@ -307,7 +307,7 @@ class TestStackImagesBlending:
         with pytest.raises(FocusStackerStackingException, match="Blending failed"):
             stack_images(
                 image_paths=[str(p) for p in aligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -337,7 +337,7 @@ class TestStackImagesResourceManagement:
         ):
             stack_images(
                 image_paths=[str(p) for p in aligned_image_paths],
-                destimation_image_path=str(output_path),
+                destination_image_path=str(output_path),
                 aligner=default_aligner,
                 blender=default_blender,
                 levels=default_levels,
@@ -381,7 +381,7 @@ class TestStackImagesParameterVariations:
         # Execute
         stack_images(
             image_paths=[str(p) for p in aligned_image_paths],
-            destimation_image_path=str(output_path),
+            destination_image_path=str(output_path),
             aligner=aligner,
             blender=blender,
             levels=levels,

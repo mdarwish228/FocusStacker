@@ -35,10 +35,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/focus-stacking"
-Repository = "https://github.com/yourusername/focus-stacking"
-Issues = "https://github.com/yourusername/focus-stacking/issues"
-Documentation = "https://github.com/yourusername/focus-stacking/wiki"
+Repository = "https://github.com/mdarwish228/FocusStacker"
+Documentation = "https://medium.com/@mohddarwish/focus-stacking-computer-vision-for-perfectly-sharp-images-a6cdf2f428af"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/focusstacker"]
@@ -47,5 +45,11 @@ packages = ["src/focusstacker"]
 dev = [
     "ruff>=0.13.1",
     "ty>=0.0.1a21",
-    "pytest>=8.4.2"
+    "pytest>=8.4.2",
 ]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
